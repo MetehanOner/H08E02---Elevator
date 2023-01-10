@@ -6,7 +6,7 @@ public class Elevator {
 
     private static final int DEFAULT_CAPACITY = 15;
 
-    private List<Integer> sequence;
+    private static List<Integer> sequence;
 
     private int capacity;
 
@@ -18,7 +18,7 @@ public class Elevator {
 
     private Direction direction;
 
-    private List<Person> passengers;
+    private static List<Person> passengers;
 
     public Elevator(int maxFloor, int capacity) {
 
