@@ -8,10 +8,17 @@ public class Building {
      * This class represents our student dorm building.
      */
     //TODO: add class attributes
-
-
+    private Elevator elevator;
+    private Person[] peopleOnFloor;
 
     //todo: add constructors as described in the problem statement
+    public Building(int numberOfFloors) {
+
+    }
+
+    public Building(int numberOfFloors, Elevator elevator) {
+
+    }
 
 
     /**

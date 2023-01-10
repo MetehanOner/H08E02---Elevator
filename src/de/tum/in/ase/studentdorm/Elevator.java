@@ -14,9 +14,37 @@ public class Elevator {
 
     private int currentFloor;
 
-    public Elevator() {
+    private Stops stops;
 
+    private Direction direction;
 
+    private List<Person> passengers;
+
+    public Elevator(int maxFloor, int capacity) {
+
+    }
+
+    public Elevator(int maxFloor) {
+
+    }
+
+    public void move() {
+
+    }
+
+    public boolean changeFloor() {
+        return false;
+    }
+
+    public boolean openDoor(Person person) {
+        return true;
+    }
+
+    public void closeDoor() {
+
+    }
+
+    public void printSequence() {
 
     }
 
