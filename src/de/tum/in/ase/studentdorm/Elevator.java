@@ -55,7 +55,14 @@ public class Elevator {
     }
 
     public boolean changeFloor() {
-        return false;
+
+        if (direction == Direction.UP) {
+            return true;
+        } else if (direction == Direction.DOWN) {
+            return true;
+        }
+
+        return true;
     }
 
     public boolean openDoor(Person person) {
@@ -100,5 +107,9 @@ public class Elevator {
 
     public Stops getStops() {
         return stops;
+    }
+
+    public void setCurrentFloor(int currentFloor) {
+        this.currentFloor = currentFloor;
     }
 }
