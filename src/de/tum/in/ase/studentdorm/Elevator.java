@@ -23,20 +23,31 @@ public class Elevator {
 
     public Elevator(int maxFloor, int capacity) {
 
-        this.capacity = capacity;
+        if (capacity <= 0) {
+          throw new IllegalArgumentException();
+        } else {
+            this.capacity = capacity;
+        }
+
         this.maxFloor = maxFloor;
+        this.stops = new Stops();
 
         sequence = new ArrayList<>();
         passengers = new ArrayList<>();
+
+        this.direction = Direction.IDLE;
     }
 
     public Elevator(int maxFloor) {
 
         this.capacity = DEFAULT_CAPACITY;
         this.maxFloor = maxFloor;
+        this.stops = new Stops();
 
         sequence = new ArrayList<>();
         passengers = new ArrayList<>();
+
+        this.direction = Direction.IDLE;
     }
 
     public void move() {
@@ -61,5 +72,33 @@ public class Elevator {
 
     public static int getDefaultCapacity() {
         return DEFAULT_CAPACITY;
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public int getCurrentFloor() {
+        return currentFloor;
+    }
+
+    public int getMaxFloor() {
+        return maxFloor;
+    }
+
+    public List<Integer> getSequence() {
+        return sequence;
+    }
+
+    public List<Person> getPassengers() {
+        return passengers;
+    }
+
+    public Stops getStops() {
+        return stops;
     }
 }
