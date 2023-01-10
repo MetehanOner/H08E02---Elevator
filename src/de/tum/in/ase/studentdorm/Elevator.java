@@ -9,7 +9,7 @@ public class Elevator {
 
     private final List<Integer> sequence;
 
-    private int capacity;
+    private final int capacity;
 
     private int maxFloor;
 
@@ -23,11 +23,15 @@ public class Elevator {
 
     public Elevator(int maxFloor, int capacity) {
 
+        this.capacity = capacity;
+
         sequence = new ArrayList<>();
         passengers = new ArrayList<>();
     }
 
     public Elevator(int maxFloor) {
+
+        this.capacity = DEFAULT_CAPACITY;
 
         sequence = new ArrayList<>();
         passengers = new ArrayList<>();
