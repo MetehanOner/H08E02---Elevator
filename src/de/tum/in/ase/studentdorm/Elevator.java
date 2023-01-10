@@ -11,7 +11,7 @@ public class Elevator {
 
     private final int capacity;
 
-    private int maxFloor;
+    private final int maxFloor;
 
     private int currentFloor;
 
@@ -24,6 +24,7 @@ public class Elevator {
     public Elevator(int maxFloor, int capacity) {
 
         this.capacity = capacity;
+        this.maxFloor = maxFloor;
 
         sequence = new ArrayList<>();
         passengers = new ArrayList<>();
@@ -32,6 +33,7 @@ public class Elevator {
     public Elevator(int maxFloor) {
 
         this.capacity = DEFAULT_CAPACITY;
+        this.maxFloor = maxFloor;
 
         sequence = new ArrayList<>();
         passengers = new ArrayList<>();
