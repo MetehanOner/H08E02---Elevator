@@ -1,12 +1,13 @@
 package de.tum.in.ase.studentdorm;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Elevator {
 
     private static final int DEFAULT_CAPACITY = 15;
 
-    private static List<Integer> sequence;
+    private final List<Integer> sequence;
 
     private int capacity;
 
@@ -18,14 +19,18 @@ public class Elevator {
 
     private Direction direction;
 
-    private static List<Person> passengers;
+    private final List<Person> passengers;
 
     public Elevator(int maxFloor, int capacity) {
 
+        sequence = new ArrayList<>();
+        passengers = new ArrayList<>();
     }
 
     public Elevator(int maxFloor) {
 
+        sequence = new ArrayList<>();
+        passengers = new ArrayList<>();
     }
 
     public void move() {
