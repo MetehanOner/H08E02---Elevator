@@ -112,4 +112,12 @@ public class Elevator {
     public void setCurrentFloor(int currentFloor) {
         this.currentFloor = currentFloor;
     }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
+    public void setStops(Stops stops) {
+        this.stops = stops;
+    }
 }
