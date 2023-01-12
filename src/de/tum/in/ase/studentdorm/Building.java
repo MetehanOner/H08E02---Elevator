@@ -14,7 +14,7 @@ public class Building {
     //todo: add constructors as described in the problem statement
     public Building(int numberOfFloors) {
 
-        if (numberOfFloors < 5) {
+        if (numberOfFloors < 4) {
             throw new IllegalArgumentException("Against the German LAW so back off!");
         } else {
             this.elevator = new Elevator(numberOfFloors);
@@ -24,7 +24,7 @@ public class Building {
 
     public Building(int numberOfFloors, Elevator elevator) {
 
-        if (numberOfFloors < 5) {
+        if (numberOfFloors < 4) {
             throw new IllegalArgumentException("Against the German LAW so back off!");
         } else {
             this.elevator = elevator;
