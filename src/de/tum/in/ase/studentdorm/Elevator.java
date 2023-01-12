@@ -48,7 +48,9 @@ public class Elevator {
 
         while (changeFloor()) {
             sequence.add(currentFloor);
-        };
+            currentFloor++;
+        }
+
     }
 
     public boolean changeFloor() {
@@ -120,5 +122,9 @@ public class Elevator {
 
     public void setStops(Stops stops) {
         this.stops = stops;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
