@@ -14,17 +14,19 @@ public class Building {
     //todo: add constructors as described in the problem statement
     public Building(int numberOfFloors) {
 
-        this.peopleOnFloor = new Person[numberOfFloors];
-        this.elevator = new Elevator(numberOfFloors);
-
+        if (numberOfFloors < 5) {
+            throw new IllegalArgumentException("Against the German LAW so back off!");
+        } else {
+            this.elevator = new Elevator(numberOfFloors);
+            this.peopleOnFloor = new Person[numberOfFloors];
+        }
     }
 
     public Building(int numberOfFloors, Elevator elevator) {
 
-        if (numberOfFloors < 5){
+        if (numberOfFloors < 5) {
             throw new IllegalArgumentException("Against the German LAW so back off!");
         } else {
-            new Building(numberOfFloors);
             this.elevator = elevator;
             this.peopleOnFloor = new Person[numberOfFloors];
         }
