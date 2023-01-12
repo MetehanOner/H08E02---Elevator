@@ -17,7 +17,7 @@ public class Building {
             throw new IllegalArgumentException("Against the German LAW so back off!");
         } else {
             this.peopleOnFloor = new Person[numberOfFloors];
-            this.elevator = new Elevator(numberOfFloors);
+            this.elevator = new Elevator(numberOfFloors-1);
         }
     }
 
