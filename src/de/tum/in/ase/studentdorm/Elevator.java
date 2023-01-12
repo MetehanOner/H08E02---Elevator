@@ -52,7 +52,7 @@ public class Elevator {
 
     public void move() {
 
-        if(changeFloor()){
+        if (changeFloor()) {
 
         }
 
