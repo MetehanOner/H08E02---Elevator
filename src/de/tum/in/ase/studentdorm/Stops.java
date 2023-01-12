@@ -31,7 +31,7 @@ public class Stops {
     public boolean isEmpty(Direction direction) {
 
         if(direction == Direction.IDLE) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Elevator is IDLE");
         }
 
         if (direction == Direction.UP) {
@@ -50,7 +50,7 @@ public class Stops {
     public void remove(Direction direction, int i) {
 
         if (direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Elevator is either IDLE or you called the invalid stop");
         }
 
         if (direction == Direction.UP) {
@@ -69,7 +69,7 @@ public class Stops {
     public void addStop(Direction direction, int i) {
 
         if(direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Elevator is either IDLE or you call the invalid stop");
         }
 
         if (direction == Direction.UP) {
