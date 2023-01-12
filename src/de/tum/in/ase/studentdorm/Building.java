@@ -1,6 +1,7 @@
 package de.tum.in.ase.studentdorm;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Building {
@@ -8,15 +9,20 @@ public class Building {
      * This class represents our student dorm building.
      */
     //TODO: add class attributes
-    private Elevator elevator;
+    private final Elevator elevator;
     private Person[] peopleOnFloor;
 
     //todo: add constructors as described in the problem statement
     public Building(int numberOfFloors) {
 
+        this.elevator = new Elevator(numberOfFloors);
+
     }
 
     public Building(int numberOfFloors, Elevator elevator) {
+
+        this.elevator = elevator;
+
 
     }
 
@@ -64,11 +70,17 @@ public class Building {
         */
     }
 
+    public Elevator getElevator() {
+        return elevator;
+    }
 
-
+    public Person[] getPeopleOnFloor() {
+        return peopleOnFloor;
+    }
 
     //TODO: use the main method for local testing and debugging
     public static void main(String[] args) {
+
         //Building building = new Building(5);
         //building.setupPeopleWaiting();
         //building.processRequests();

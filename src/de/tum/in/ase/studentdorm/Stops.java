@@ -29,6 +29,11 @@ public class Stops {
      * This method takes a direction value and based on that value it checks if the corresponding list is empty.
      */
     public boolean isEmpty(Direction direction) {
+
+        if(direction == Direction.IDLE) {
+            throw new IllegalArgumentException();
+        }
+
         if (direction == Direction.UP) {
             return stopsUp.isEmpty();
         }
@@ -43,6 +48,11 @@ public class Stops {
      *
      */
     public void remove(Direction direction, int i) {
+
+        if (direction == Direction.IDLE | i < 0) {
+            throw new IllegalArgumentException();
+        }
+
         if (direction == Direction.UP) {
             stopsUp.remove(i);
         } else {
@@ -57,6 +67,11 @@ public class Stops {
      *
      */
     public void addStop(Direction direction, int i) {
+
+        if(direction == Direction.IDLE | i < 0) {
+            throw new IllegalArgumentException();
+        }
+
         if (direction == Direction.UP) {
             stopsUp.add(i);
         } else {
@@ -72,13 +87,17 @@ public class Stops {
      * @return an int value representing a floor number
      */
     public int getNextStop(Direction direction, int i) {
+
+        if (direction == Direction.IDLE | i < 0) {
+            throw new IllegalArgumentException();
+        }
+
         if (direction == Direction.UP) {
             return stopsUp.get(i);
         } else {
             return stopsDown.get(i);
         }
     }
-
 
     public List<Integer> getStopsUp() {
         return stopsUp;

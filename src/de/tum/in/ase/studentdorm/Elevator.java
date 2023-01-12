@@ -52,13 +52,19 @@ public class Elevator {
 
     public void move() {
 
+        if(changeFloor()){
+
+        }
+
     }
 
     public boolean changeFloor() {
 
         if (direction == Direction.UP) {
+
             return true;
         } else if (direction == Direction.DOWN) {
+
             return true;
         }
 
