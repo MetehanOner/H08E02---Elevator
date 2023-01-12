@@ -53,10 +53,10 @@ public class Elevator {
     public boolean changeFloor() {
 
         if (direction == Direction.UP) {
-            stops.addStop(Direction.UP, currentFloor + 1);
+            currentFloor = currentFloor + 1;
             return true;
         } else if (direction == Direction.DOWN) {
-            stops.addStop(Direction.DOWN, currentFloor - 1);
+            currentFloor = currentFloor - 1;
             return true;
         } else {
             return false;
