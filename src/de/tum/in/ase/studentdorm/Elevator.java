@@ -1,6 +1,7 @@
 package de.tum.in.ase.studentdorm;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Elevator {
@@ -24,7 +25,7 @@ public class Elevator {
     public Elevator(int maxFloor, int capacity) {
 
         if (capacity <= 0) {
-          throw new IllegalArgumentException();
+            throw new IllegalArgumentException();
         } else {
             this.capacity = capacity;
         }
@@ -39,15 +40,7 @@ public class Elevator {
     }
 
     public Elevator(int maxFloor) {
-
-        this.capacity = DEFAULT_CAPACITY;
-        this.maxFloor = maxFloor;
-        this.stops = new Stops();
-
-        sequence = new ArrayList<>();
-        passengers = new ArrayList<>();
-
-        this.direction = Direction.IDLE;
+        this(maxFloor, DEFAULT_CAPACITY);
     }
 
     public void move() {

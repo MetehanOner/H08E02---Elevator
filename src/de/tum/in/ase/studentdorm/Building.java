@@ -8,28 +8,22 @@ public class Building {
      * This class represents our student dorm building.
      */
     //TODO: add class attributes
-    private final Elevator elevator;
+    private Elevator elevator;
     private final Person[] peopleOnFloor;
 
     //todo: add constructors as described in the problem statement
     public Building(int numberOfFloors) {
-
-        if (numberOfFloors < 4) {
+        if (numberOfFloors < 5) {
             throw new IllegalArgumentException("Against the German LAW so back off!");
         } else {
-            this.elevator = new Elevator(numberOfFloors);
             this.peopleOnFloor = new Person[numberOfFloors];
+            this.elevator = new Elevator(numberOfFloors);
         }
     }
 
     public Building(int numberOfFloors, Elevator elevator) {
-
-        if (numberOfFloors < 4) {
-            throw new IllegalArgumentException("Against the German LAW so back off!");
-        } else {
-            this.elevator = elevator;
-            this.peopleOnFloor = new Person[numberOfFloors];
-        }
+        this(numberOfFloors);
+        this.elevator = elevator;
     }
 
 
