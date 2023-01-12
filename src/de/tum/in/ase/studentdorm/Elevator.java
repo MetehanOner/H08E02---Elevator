@@ -80,7 +80,9 @@ public class Elevator {
     }
 
     public void printSequence() {
-
+        for (Integer integer : sequence) {
+            System.out.print(integer + "\n");
+        }
     }
 
     public static int getDefaultCapacity() {

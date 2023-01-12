@@ -10,19 +10,25 @@ public class Building {
      */
     //TODO: add class attributes
     private final Elevator elevator;
-    private Person[] peopleOnFloor;
+    private final Person[] peopleOnFloor;
 
     //todo: add constructors as described in the problem statement
     public Building(int numberOfFloors) {
 
-        this.elevator = new Elevator(numberOfFloors);
+        if (numberOfFloors < 5){
+            throw new IllegalArgumentException("Against the German LAW so back off!");
+        } else {
+            this.peopleOnFloor = new Person[numberOfFloors];
+            this.elevator = new Elevator(numberOfFloors);
+        }
 
     }
 
     public Building(int numberOfFloors, Elevator elevator) {
 
+        new Building(numberOfFloors);
         this.elevator = elevator;
-
+        this.peopleOnFloor = new Person[numberOfFloors];
 
     }
 
@@ -63,11 +69,10 @@ public class Building {
         //TODO: use this method to generate People waiting on floor
         // this method does not affect the tests, use it as you wish
 
-        /*
-        floors[4] = new Person(3);
+        /*floors[4] = new Person(3);
         floors[0] = new Person(1);
-        floors[1] = new Person(0);
-        */
+        floors[1] = new Person(0);*/
+
     }
 
     public Elevator getElevator() {
