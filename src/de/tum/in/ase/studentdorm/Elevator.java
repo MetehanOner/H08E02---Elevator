@@ -13,7 +13,7 @@ public class Elevator {
 
     private final int maxFloor;
 
-    private int currentFloor;
+    private int currentFloor = 0;
 
     private Stops stops;
 
@@ -53,14 +53,14 @@ public class Elevator {
     public boolean changeFloor() {
 
         if (direction == Direction.UP) {
-
+            stops.addStop(Direction.UP, currentFloor++);
             return true;
         } else if (direction == Direction.DOWN) {
-
+            stops.addStop(Direction.DOWN, currentFloor--);
             return true;
         }
 
-        return true;
+        return false;
     }
 
     public boolean openDoor(Person person) {
