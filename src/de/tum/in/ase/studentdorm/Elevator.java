@@ -1,5 +1,7 @@
 package de.tum.in.ase.studentdorm;
 
+import de.tum.in.ase.hdd.RotationDirection;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,9 +47,8 @@ public class Elevator {
     public void move() {
 
         if (changeFloor()) {
-            sequence.add(0, currentFloor);
+            sequence.add(currentFloor);
         }
-
     }
 
     public boolean changeFloor() {
