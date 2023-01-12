@@ -46,9 +46,9 @@ public class Elevator {
 
     public void move() {
 
-        if (changeFloor()) {
+        while (changeFloor()) {
             sequence.add(currentFloor);
-        }
+        };
     }
 
     public boolean changeFloor() {
