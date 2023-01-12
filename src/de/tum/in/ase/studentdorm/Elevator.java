@@ -45,7 +45,7 @@ public class Elevator {
     public void move() {
 
         if (changeFloor()) {
-
+            sequence.add(0, currentFloor);
         }
 
     }
@@ -53,14 +53,14 @@ public class Elevator {
     public boolean changeFloor() {
 
         if (direction == Direction.UP) {
-            stops.addStop(Direction.UP, currentFloor++);
+            stops.addStop(Direction.UP, currentFloor + 1);
             return true;
         } else if (direction == Direction.DOWN) {
-            stops.addStop(Direction.DOWN, currentFloor--);
+            stops.addStop(Direction.DOWN, currentFloor - 1);
             return true;
+        } else {
+            return false;
         }
-
-        return false;
     }
 
     public boolean openDoor(Person person) {
