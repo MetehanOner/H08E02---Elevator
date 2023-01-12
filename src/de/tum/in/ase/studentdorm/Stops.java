@@ -30,14 +30,15 @@ public class Stops {
      */
     public boolean isEmpty(Direction direction) {
 
-        if(direction == Direction.IDLE) {
+        if (direction == Direction.IDLE) {
             throw new IllegalArgumentException("Elevator is IDLE");
+        } else {
+            if (direction == Direction.UP) {
+                return stopsUp.isEmpty();
+            }
+            return stopsDown.isEmpty();
         }
 
-        if (direction == Direction.UP) {
-            return stopsUp.isEmpty();
-        }
-        return stopsDown.isEmpty();
     }
 
     /**
@@ -51,13 +52,14 @@ public class Stops {
 
         if (direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
             throw new IllegalArgumentException("Elevator is either IDLE or you called the invalid stop");
+        } else {
+            if (direction == Direction.UP) {
+                stopsUp.remove(i);
+            } else {
+                stopsDown.remove(i);
+            }
         }
 
-        if (direction == Direction.UP) {
-            stopsUp.remove(i);
-        } else {
-            stopsDown.remove(i);
-        }
     }
 
     /**
@@ -68,15 +70,17 @@ public class Stops {
      */
     public void addStop(Direction direction, int i) {
 
-        if(direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
+        if (direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
             throw new IllegalArgumentException("Elevator is either IDLE or you call the invalid stop");
+        } else {
+            if (direction == Direction.UP) {
+                stopsUp.add(i);
+            } else {
+                stopsDown.add(i);
+            }
         }
 
-        if (direction == Direction.UP) {
-            stopsUp.add(i);
-        } else {
-            stopsDown.add(i);
-        }
+
     }
 
 
@@ -90,12 +94,12 @@ public class Stops {
 
         if (direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
             throw new IllegalArgumentException();
-        }
-
-        if (direction == Direction.UP) {
-            return stopsUp.get(i);
         } else {
-            return stopsDown.get(i);
+            if (direction == Direction.UP) {
+                return stopsUp.get(i);
+            } else {
+                return stopsDown.get(i);
+            }
         }
     }
 
