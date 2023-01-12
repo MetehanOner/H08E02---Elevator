@@ -49,7 +49,7 @@ public class Stops {
      */
     public void remove(Direction direction, int i) {
 
-        if (direction == Direction.IDLE | i < 0) {
+        if (direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
             throw new IllegalArgumentException();
         }
 
@@ -68,7 +68,7 @@ public class Stops {
      */
     public void addStop(Direction direction, int i) {
 
-        if(direction == Direction.IDLE | i < 0) {
+        if(direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
             throw new IllegalArgumentException();
         }
 
@@ -88,7 +88,7 @@ public class Stops {
      */
     public int getNextStop(Direction direction, int i) {
 
-        if (direction == Direction.IDLE | i < 0) {
+        if (direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
             throw new IllegalArgumentException();
         }
 
