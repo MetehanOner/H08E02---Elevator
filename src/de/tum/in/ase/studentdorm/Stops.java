@@ -54,7 +54,7 @@ public class Stops {
             throw new IllegalArgumentException("Elevator is IDLE");
         }
 
-        if (i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
+        if (i < 0 || i > stopsUp.size() || i >= stopsDown.size()) {
             throw new IllegalArgumentException("You called the invalid stop");
         } else {
             if (direction == Direction.UP) {
@@ -78,7 +78,7 @@ public class Stops {
             throw new IllegalArgumentException("Elevator is IDLE");
         }
 
-        if (i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
+        if (i < 0 || i > stopsUp.size() || i >= stopsDown.size()) {
             throw new IllegalArgumentException("You call the invalid stop");
         } else {
             if (direction == Direction.UP) {
@@ -104,7 +104,7 @@ public class Stops {
             throw new IllegalArgumentException("Elevator is IDLE");
         }
 
-        if (i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
+        if (i < 0 || i > stopsUp.size() || i >= stopsDown.size()) {
             throw new IllegalArgumentException("You call the invalid stop");
         } else {
             if (direction == Direction.UP) {
