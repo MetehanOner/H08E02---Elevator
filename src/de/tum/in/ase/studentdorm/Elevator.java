@@ -66,10 +66,10 @@ public class Elevator {
 
         if (direction == Direction.UP) {
             currentFloor = currentFloor + 1;
-            return currentFloor != getStops().getNextStop(Direction.UP, currentFloor);
+            return currentFloor != getStops().getNextStop(Direction.UP, currentFloor + 1);
         } else if (direction == Direction.DOWN) {
             currentFloor = currentFloor - 1;
-            return currentFloor != getStops().getNextStop(Direction.DOWN, currentFloor);
+            return currentFloor != getStops().getNextStop(Direction.DOWN, currentFloor - 1);
         } else {
             if (!getStops().isEmpty(Direction.UP)) {
                 direction = Direction.UP;
