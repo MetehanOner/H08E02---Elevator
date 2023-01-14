@@ -46,9 +46,8 @@ public class Elevator {
 
     public void move() {
 
-        while (changeFloor()) {
-            sequence.add(currentFloor);
-            currentFloor++;
+        if (changeFloor()) {
+            changeFloor();
         }
 
     }
@@ -57,13 +56,11 @@ public class Elevator {
 
         if (direction == Direction.UP) {
             currentFloor = currentFloor + 1;
-            return true;
         } else if (direction == Direction.DOWN) {
             currentFloor = currentFloor - 1;
-            return true;
-        } else {
-            return false;
         }
+
+        return true;
     }
 
     public boolean openDoor(Person person) {
