@@ -57,6 +57,8 @@ public class Building {
 
         //TODO finish the implementation of the method
 
+
+
     }
 
     /**

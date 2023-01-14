@@ -47,6 +47,7 @@ public class Elevator {
     public void move() {
 
         if (changeFloor()) {
+            sequence.add(currentFloor);
             changeFloor();
         }
 
@@ -56,11 +57,26 @@ public class Elevator {
 
         if (direction == Direction.UP) {
             currentFloor = currentFloor + 1;
+            if (currentFloor == getStops().getNextStop(direction, currentFloor)) {
+                return false;
+            } else {
+                return true;
+            }
         } else if (direction == Direction.DOWN) {
             currentFloor = currentFloor - 1;
+            if (currentFloor == getStops().getNextStop(direction, currentFloor)) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            if (getStops().isEmpty(Direction.UP)) {
+                direction = Direction.UP;
+                return true;
+            } else {
+                return false;
+            }
         }
-
-        return true;
     }
 
     public boolean openDoor(Person person) {
@@ -122,6 +138,12 @@ public class Elevator {
     }
 
     public static void main(String[] args) {
+
+        Elevator e = new Elevator(5);
+
+        e.changeFloor();
+        e.move();
+        e.printSequence();
 
     }
 }
