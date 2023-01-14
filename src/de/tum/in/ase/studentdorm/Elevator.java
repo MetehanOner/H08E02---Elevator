@@ -57,14 +57,14 @@ public class Elevator {
 
         if (direction == Direction.UP) {
             currentFloor = currentFloor + 1;
-            if (currentFloor == getStops().getNextStop(direction, currentFloor)) {
+            if (currentFloor == getStops().getNextStop(Direction.UP, currentFloor)) {
                 return false;
             } else {
                 return true;
             }
         } else if (direction == Direction.DOWN) {
             currentFloor = currentFloor - 1;
-            if (currentFloor == getStops().getNextStop(direction, currentFloor)) {
+            if (currentFloor == getStops().getNextStop(Direction.DOWN, currentFloor)) {
                 return false;
             } else {
                 return true;
