@@ -40,8 +40,15 @@ public class Building {
 
         //TODO: uncomment the following two lines for easier local testing
 
-        // elevator.printSequence();
-        // System.out.println("Elevator finished on " + elevator.getCurrentFloor());
+        while (elevator.getDirection() != Direction.IDLE) {
+            elevator.move();
+            elevator.openDoor(peopleOnFloor[elevator.getCurrentFloor()]);
+            elevator.closeDoor();
+        }
+
+        elevator.printSequence();
+        System.out.println("Elevator finished on " + elevator.getCurrentFloor());
+
     }
 
 
@@ -56,6 +63,7 @@ public class Building {
         List<Integer> down = new ArrayList<>();
 
         //TODO finish the implementation of the method
+
 
 
 
@@ -89,6 +97,28 @@ public class Building {
         //building.setupPeopleWaiting();
         //building.processRequests();
         //building.operateElevator();
+
+
+
+            Elevator e = new Elevator(5);
+
+            List<Integer> sUP = new ArrayList<>();
+            List<Integer> sDOWN = new ArrayList<>();
+            sUP.add(2);
+            sUP.add(3);
+            sUP.add(4);
+
+            sDOWN.add(3);
+            sDOWN.add(1);
+            sDOWN.add(0);
+
+            Stops ss = new Stops(sUP, sDOWN);
+
+            e.changeFloor();
+            e.move();
+            e.printSequence();
+
+
     }
 
 }
