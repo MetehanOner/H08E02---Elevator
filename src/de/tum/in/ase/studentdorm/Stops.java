@@ -50,8 +50,12 @@ public class Stops {
      */
     public void remove(Direction direction, int i) {
 
-        if (direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
-            throw new IllegalArgumentException("Elevator is either IDLE or you called the invalid stop");
+        if ( direction == Direction.IDLE ) {
+            throw new IllegalArgumentException("Elevator is IDLE");
+        }
+
+        if (i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
+            throw new IllegalArgumentException("You called the invalid stop");
         } else {
             if (direction == Direction.UP) {
                 stopsUp.remove(i);
@@ -70,8 +74,12 @@ public class Stops {
      */
     public void addStop(Direction direction, int i) {
 
-        if (direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
-            throw new IllegalArgumentException("Elevator is either IDLE or you call the invalid stop");
+        if ( direction == Direction.IDLE ) {
+            throw new IllegalArgumentException("Elevator is IDLE");
+        }
+
+        if (i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
+            throw new IllegalArgumentException("You call the invalid stop");
         } else {
             if (direction == Direction.UP) {
                 stopsUp.add(i);
@@ -92,8 +100,12 @@ public class Stops {
      */
     public int getNextStop(Direction direction, int i) {
 
-        if (direction == Direction.IDLE | i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
-            throw new IllegalArgumentException();
+        if ( direction == Direction.IDLE ) {
+            throw new IllegalArgumentException("Elevator is IDLE");
+        }
+
+        if (i < 0 | i > stopsUp.size() | i >= stopsDown.size()) {
+            throw new IllegalArgumentException("You call the invalid stop");
         } else {
             if (direction == Direction.UP) {
                 return stopsUp.get(i);
