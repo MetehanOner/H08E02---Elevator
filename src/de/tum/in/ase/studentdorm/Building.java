@@ -99,26 +99,6 @@ public class Building {
         //building.operateElevator();
 
 
-
-            Elevator e = new Elevator(5);
-
-            List<Integer> sUP = new ArrayList<>();
-            List<Integer> sDOWN = new ArrayList<>();
-            sUP.add(2);
-            sUP.add(3);
-            sUP.add(4);
-
-            sDOWN.add(3);
-            sDOWN.add(1);
-            sDOWN.add(0);
-
-            Stops ss = new Stops(sUP, sDOWN);
-
-            e.changeFloor();
-            e.move();
-            e.printSequence();
-
-
     }
 
 }
