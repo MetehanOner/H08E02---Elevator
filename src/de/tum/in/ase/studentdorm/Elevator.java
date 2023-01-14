@@ -1,7 +1,5 @@
 package de.tum.in.ase.studentdorm;
 
-import de.tum.in.ase.hdd.RotationDirection;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +30,18 @@ public class Elevator {
         }
 
         this.maxFloor = maxFloor;
-        this.stops = new Stops();
+
+        List<Integer> sUP = new ArrayList<>();
+        List<Integer> sDOWN = new ArrayList<>();
+        sUP.add(2);
+        sUP.add(3);
+        sUP.add(4);
+
+        sDOWN.add(3);
+        sDOWN.add(1);
+        sDOWN.add(0);
+
+        this.stops = new Stops(sUP, sDOWN);
 
         sequence = new ArrayList<>();
         passengers = new ArrayList<>();
@@ -57,18 +66,10 @@ public class Elevator {
 
         if (direction == Direction.UP) {
             currentFloor = currentFloor + 1;
-            if (currentFloor == getStops().getNextStop(Direction.UP, currentFloor)) {
-                return false;
-            } else {
-                return true;
-            }
+            return currentFloor != getStops().getNextStop(Direction.UP, currentFloor);
         } else if (direction == Direction.DOWN) {
             currentFloor = currentFloor - 1;
-            if (currentFloor == getStops().getNextStop(Direction.DOWN, currentFloor)) {
-                return false;
-            } else {
-                return true;
-            }
+            return currentFloor != getStops().getNextStop(Direction.DOWN, currentFloor);
         } else {
             if (!getStops().isEmpty(Direction.UP)) {
                 direction = Direction.UP;
