@@ -50,7 +50,7 @@ public class Stops {
      */
     public void remove(Direction direction, int i) {
 
-        if ( direction == Direction.IDLE ) {
+        if (direction == Direction.IDLE) {
             throw new IllegalArgumentException("Elevator is IDLE");
         }
 
@@ -74,7 +74,7 @@ public class Stops {
      */
     public void addStop(Direction direction, int i) {
 
-        if ( direction == Direction.IDLE ) {
+        if (direction == Direction.IDLE) {
             throw new IllegalArgumentException("Elevator is IDLE");
         }
 
@@ -100,7 +100,7 @@ public class Stops {
      */
     public int getNextStop(Direction direction, int i) {
 
-        if ( direction == Direction.IDLE ) {
+        if (direction == Direction.IDLE) {
             throw new IllegalArgumentException("Elevator is IDLE");
         }
 
