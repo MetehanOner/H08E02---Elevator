@@ -70,7 +70,7 @@ public class Elevator {
                 return true;
             }
         } else {
-            if (getStops().isEmpty(Direction.UP)) {
+            if (!getStops().isEmpty(Direction.UP)) {
                 direction = Direction.UP;
                 return true;
             } else {
