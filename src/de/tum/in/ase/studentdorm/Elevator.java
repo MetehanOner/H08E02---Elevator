@@ -31,9 +31,6 @@ public class Elevator {
 
         this.maxFloor = maxFloor;
 
-        List<Integer> sUP = new ArrayList<>();
-        List<Integer> sDOWN = new ArrayList<>();
-
         this.stops = new Stops();
 
         sequence = new ArrayList<>();
