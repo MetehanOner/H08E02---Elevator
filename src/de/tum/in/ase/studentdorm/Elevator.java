@@ -33,15 +33,8 @@ public class Elevator {
 
         List<Integer> sUP = new ArrayList<>();
         List<Integer> sDOWN = new ArrayList<>();
-        sUP.add(2);
-        sUP.add(3);
-        sUP.add(4);
 
-        sDOWN.add(3);
-        sDOWN.add(1);
-        sDOWN.add(0);
-
-        this.stops = new Stops(sUP, sDOWN);
+        this.stops = new Stops();
 
         sequence = new ArrayList<>();
         passengers = new ArrayList<>();
@@ -55,10 +48,13 @@ public class Elevator {
 
     public void move() {
 
-        if (changeFloor()) {
-            sequence.add(currentFloor);
-            changeFloor();
-        }
+        boolean isMoving;
+
+        do {
+            isMoving = changeFloor();
+        } while (!isMoving);
+
+        sequence.add(currentFloor);
 
     }
 
