@@ -57,12 +57,37 @@ public class Elevator {
 
     public boolean changeFloor() {
 
+        if (direction == Direction.IDLE) {
+
+            if (!getStops().isEmpty(Direction.UP)) {
+                direction = Direction.UP;
+                return currentFloor == getStops().getNextStop(Direction.UP, 0);
+            }
+            if (!getStops().isEmpty(Direction.DOWN)) {
+                direction = Direction.DOWN;
+                return currentFloor == getStops().getNextStop(Direction.DOWN, 0);
+            }
+
+        }
+
         if (direction == Direction.UP) {
             currentFloor = currentFloor + 1;
-            return currentFloor != getStops().getNextStop(Direction.UP, currentFloor + 1);
+            int next = stops.getNextStop(Direction.UP, 0);
+            return currentFloor == next;
+        } else {
+            currentFloor = currentFloor - 1;
+            int next = stops.getNextStop(Direction.DOWN, 0);
+            return currentFloor == next;
+        }
+
+
+        /*if (direction == Direction.UP) {
+            currentFloor = currentFloor + 1;
+
+            return currentFloor != getStops().getNextStop(Direction.UP, 0);
         } else if (direction == Direction.DOWN) {
             currentFloor = currentFloor - 1;
-            return currentFloor != getStops().getNextStop(Direction.DOWN, currentFloor - 1);
+            return currentFloor != getStops().getNextStop(Direction.DOWN, 0);
         } else {
             if (!getStops().isEmpty(Direction.UP)) {
                 direction = Direction.UP;
@@ -70,7 +95,7 @@ public class Elevator {
             } else {
                 return false;
             }
-        }
+        }*/
     }
 
     public boolean openDoor(Person person) {
